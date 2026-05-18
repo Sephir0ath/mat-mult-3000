@@ -1,1 +1,1 @@
-# MatrixMultiplication
+# mat-mult-3000

@@ -1,5 +1,4 @@
 #include <vector>
-#include <iostream>
 
 typedef std::vector<std::vector<int>> matrix;
 
@@ -154,32 +153,3 @@ matrix hybridMatrixMultiplication(matrix A, matrix B, int n0){
     return C;
 }
 
-int main(int argc, char** argv){
-	if (argc < 2){
-		std::cout << "Error: no se especificó tamaño de matriz";
-	    return 1;
-    }
-
-	int n = std::stoi(argv[1]);
-
-	matrix matrixA(n, std::vector<int>(n, 0));
-	matrix matrixB(n, std::vector<int>(n, 0));
-
-	for (int i = 1; i < n+1; i++){
-		for (int j = 1; j <n+1; j++){
-			matrixA[i-1][j-1] = i + (i-1)*2;
-			matrixB[i-1][j-1] = i; 
-			 			 
-		}
-	}
-
-	matrix c = matrixMultiplication(matrixA, matrixB);
-	for (int i = 0; i < (int)c.size(); i++){
-		for (int j = 0; j < (int)c.size(); j++){
-			std::cout << c[i][j] << " ";
-		}
-		std::cout << std::endl;
-	}
-
-	return 0;
-}

@@ -43,8 +43,17 @@ matrix normalMatrixMultiplication(const matrix &A, const matrix &B){
 }
 
 // generar matrices aleatorias
-
-
+matrix generateRandomMatrix(int n, std::mt19937_64 &rng) {
+    matrix M(n, std::vector<int>(n));
+    std::uniform_int_distribution<int> dist(1, 99); 
+    
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            M[i][j] = dist(rng);
+        }
+    }
+    return M;
+}
 
 // Algoritmo Divide and conquer 
 matrix matrixMultiplication(const matrix &A, const matrix &B){

@@ -1,4 +1,9 @@
 #include <vector>
+#include <fstream>
+#include <iostream>
+#include <stdexcept>
+#include <string>
+#include <vector>
 
 typedef std::vector<std::vector<int>> matrix;
 
@@ -36,6 +41,9 @@ matrix normalMatrixMultiplication(const matrix &A, const matrix &B){
 
 	return C;
 }
+
+// generar matrices aleatorias
+
 
 
 // Algoritmo Divide and conquer 
@@ -153,3 +161,22 @@ matrix hybridMatrixMultiplication(const matrix &A, const matrix &B, int n0){
     return C;
 }
 
+matrix readMatrixFromFile(const std::string& filename){
+    std::ifstream in(filename);
+    if (!in.is_open()) {
+        throw std::runtime_error("Error abriendo archivo: " + filename);
+    }
+    int n;
+    if (!(in >> n) || n < 0) {
+        throw std::runtime_error("Error en formato. Se espera n al inicio: " + filename);
+    }
+    matrix M(n, std::vector<int>(n));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (!(in >> M[i][j])) {
+                throw std::runtime_error("Error en formato. Faltan elementos: " + filename);
+            }
+        }
+    }
+    return M;
+}

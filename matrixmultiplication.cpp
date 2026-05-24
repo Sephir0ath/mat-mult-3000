@@ -2,7 +2,7 @@
 
 typedef std::vector<std::vector<int>> matrix;
 
-matrix sum(matrix A, matrix B){
+matrix sum(const matrix &A, const matrix &B){
 	int n = A.size();
     matrix res(n, std::vector<int>(n));
     for (int i = 0; i < n; i++)
@@ -11,7 +11,7 @@ matrix sum(matrix A, matrix B){
     return res;
 }
 
-matrix sub(matrix A, matrix B) {
+matrix sub(const matrix &A, const matrix &B) {
     int n = A.size();
     matrix res(n, std::vector<int>(n));
     for (int i = 0; i < n; i++)
@@ -21,7 +21,7 @@ matrix sub(matrix A, matrix B) {
 }
 
 // Algoritmo Normal
-matrix normalMatrixMultiplication(matrix A, matrix B){
+matrix normalMatrixMultiplication(const matrix &A, const matrix &B){
     int n = A.size();
 
     matrix C(n, std::vector<int>(n, 0));
@@ -39,7 +39,7 @@ matrix normalMatrixMultiplication(matrix A, matrix B){
 
 
 // Algoritmo Divide and conquer 
-matrix matrixMultiplication(matrix A, matrix B){
+matrix matrixMultiplication(const matrix &A, const matrix &B){
 	int n = A.size();
 
 	// Caso base: matriz 1x1
@@ -97,7 +97,7 @@ matrix matrixMultiplication(matrix A, matrix B){
 }
 
 // Algoritmo híbrido
-matrix hybridMatrixMultiplication(matrix A, matrix B, int n0){
+matrix hybridMatrixMultiplication(const matrix &A, const matrix &B, int n0){
     int n = A.size();
     
     if (n <= n0) {

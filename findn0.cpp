@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
         
         file << n0 << "," << promedio << std::endl;
         
-        std::cout << "t mean: " << promedio << " ns" << std::endl;
+        std::cout << "t mean: " << promedio << " ms" << std::endl;
     }
 
     file.close();

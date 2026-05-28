@@ -1,5 +1,5 @@
 # mat-mult-3000
--
+---
 Implementación de distintos algoritmos de multiplicación de matrices, incluyendo el algoritmo clásico, el algoritmo de Strassen y un enfoque híbrido que combina ambos métodos. La versión híbrida aplica recursivamente el algoritmo de Strassen hasta que las submatrices alcanzan un tamaño _n_, momento en el cual cambia al algoritmo clásico de multiplicación de matrices.
 
 ## Compilación

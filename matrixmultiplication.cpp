@@ -4,6 +4,7 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <random>
 
 typedef std::vector<std::vector<int>> matrix;
 
@@ -53,6 +54,38 @@ matrix generateRandomMatrix(int n, std::mt19937_64 &rng) {
         }
     }
     return M;
+}
+
+matrix generateDiagonalMatrix(int n, std::mt19937_64 &rng){
+    matrix M(n, std::vector<int>(n));
+    std::uniform_int_distribution<int> dist(1, 99);
+
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < n; j++){
+            if (i == j){
+                M[i][j] = dist(rng);
+            }
+            else{
+                M[i][j] = 0;
+            }
+        }
+    }
+    return M;
+}
+
+matrix generateTriangularMatrix(int n, std::mt19937_64 &rng){
+    matrix M(n, std::vector<int>(n));
+    std::uniform_int_distribution<int> dist(1, 99);
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (i < j){
+                   M[i][j] = dist(rng);
+               }
+        }
+    }
+    return M;
+
 }
 
 // Algoritmo Divide and conquer 

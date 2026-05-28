@@ -38,26 +38,6 @@ void writeMatrixTofile(matrix &M, const std::string& filename){
     }
 }
 
-matrix readMatrixFromFile(const std::string& filename){
-    std::ifstream in(filename);
-    if (!in.is_open()) {
-        throw std::runtime_error("Error abriendo archivo: " + filename);
-    }
-    int n;
-    if (!(in >> n) || n < 0) {
-        throw std::runtime_error("Error en formato. Se espera n al inicio: " + filename);
-    }
-    matrix M(n, std::vector<int>(n));
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            if (!(in >> M[i][j])) {
-                throw std::runtime_error("Error en formato. Faltan elementos: " + filename);
-            }
-        }
-    }
-    return M;
-}
-
 bool compareMatrices(matrix& A, matrix& B){
     if (A.size() != B.size()) return false;
         

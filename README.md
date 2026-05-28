@@ -23,7 +23,7 @@ g++ -std=c++11 -O3 findn0.cpp -o findn0
 ```bash
 ./exec
 ```
-Esto va a comprobar las instancias de ejemplo dentro de la carpeta de `instances`.
+Esto va a comprobar la correctitud de las instancias de ejemplo dentro de la carpeta de `instances/`. Concretamente, se cargarán las matrices de cada instancia y se compararán con las soluciones correctas dentro de `solutions/`.
 
 Y para ejecutar el archivo de findn0:
 ```bash

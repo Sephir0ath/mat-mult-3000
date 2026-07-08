@@ -34,4 +34,4 @@ siendo _val_ la máxima potencia de dos para realizar la búsqueda del _n_<sub>0
 ## Colaboradores ✨
 * [Juan Felipe Raysz Muñoz](https://github.com/Sephir0ath)
 * [Oliver Isaías Peñailillo Sanzana](https://github.com/pyrrss)
-* [Francisca Nuñez Larenas](https://github.com/sshiro0)
+* [Manuel Nuñez Larenas](https://github.com/sshiro0)
